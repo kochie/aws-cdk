@@ -83,7 +83,7 @@
     "@aws-cdk/aws-ssm": "0.0.0",
     "@aws-cdk/core": "0.0.0",
     "@aws-cdk/custom-resources": "0.0.0",
-    "constructs": "^3.0.4",
+    "constructs": "^3.0.17",
     "yaml": "1.10.0"
   },
   "bundledDependencies": [
@@ -99,7 +99,7 @@
     "@aws-cdk/aws-ssm": "0.0.0",
     "@aws-cdk/core": "0.0.0",
     "@aws-cdk/custom-resources": "0.0.0",
-    "constructs": "^3.0.4"
+    "constructs": "^3.0.17"
   },
   "engines": {
     "node": ">= 10.13.0 <13 || >=13.7.0"

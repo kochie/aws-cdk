@@ -179,7 +179,7 @@
     "@aws-cdk/custom-resources": "0.0.0",
     "@aws-cdk/cx-api": "0.0.0",
     "@aws-cdk/region-info": "0.0.0",
-    "constructs": "^3.0.4",
+    "constructs": "^3.0.17",
     "fs-extra": "^9.0.1",
     "jsii-reflect": "^1.11.0",
     "jsonschema": "^1.2.6",
