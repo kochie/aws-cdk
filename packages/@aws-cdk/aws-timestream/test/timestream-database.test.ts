@@ -30,7 +30,7 @@ describe('timestream database', () => {
     const key = new kms.Key(stack, 'testKey');
 
     new timestream.Database(stack, 'testDatabase', {
-      kmsKeyId: key.keyId,
+      kmsKey: key,
     });
 
     expect(stack).toHaveResourceLike('AWS::Timestream::Database', {
@@ -48,7 +48,7 @@ describe('adding database from imported stack', () => {
   });
 
   test('imported database can add Database from ARN', () => {
-    const importedDatabase = timestream.Database.fromDatabaseArn(stack_1, 'importedDatabase', database.databaseArn);
+    timestream.Database.fromDatabaseArn(stack_1, 'importedDatabase', database.databaseArn);
 
     expect(stack_1).toHaveResourceLike('AWS::Timestream::Database');
   });

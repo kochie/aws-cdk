@@ -1,3 +1,4 @@
+import { IKey } from '@aws-cdk/aws-kms';
 import { IResource, Resource, Stack } from '@aws-cdk/core';
 import { Construct } from 'constructs';
 import { CfnDatabase } from './timestream.generated';
@@ -22,7 +23,7 @@ export interface IDatabase extends IResource {
    * KeyId for the KMS key to encrypt the database with.
    *
    */
-  readonly kmsKeyId?: string;
+  readonly kmsKey?: IKey;
 }
 
 /**
@@ -41,7 +42,7 @@ export interface DatabaseProps {
    *
    * @default Unencrypted
    */
-  readonly kmsKeyId?: string;
+  readonly kmsKey?: IKey;
 }
 
 /**
@@ -101,7 +102,7 @@ export class Database extends Resource implements IDatabase {
    *
    * @default Unencrypted
    */
-  public readonly kmsKeyId?: string;
+  public readonly kmsKey?: IKey;
 
   /**
    * The database ARN.
@@ -114,9 +115,12 @@ export class Database extends Resource implements IDatabase {
       physicalName: props.databaseName,
     });
 
-    const database = new CfnDatabase(this, 'Resource', props);
+    this.kmsKey = props.kmsKey;
 
-    this.kmsKeyId = database.kmsKeyId;
+    const database = new CfnDatabase(this, 'Resource', {
+      kmsKeyId: props.kmsKey?.keyId,
+      databaseName: props.databaseName,
+    });
 
     this.databaseArn = this.getResourceArnAttribute(database.attrArn, {
       service: 'timestream',
