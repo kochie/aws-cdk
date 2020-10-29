@@ -11146,12 +11146,11 @@ promise-retry@^1.1.1:
     err-code "^1.0.0"
     retry "^0.10.0"
 
-promptly@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/promptly/-/promptly-3.0.3.tgz#e178f722e73d82c60d019462044bccfdd9872f42"
-  integrity sha512-EWnzOsxVKUjqKeE6SStH1/cO4+DE44QolaoJ4ojGd9z6pcNkpgfJKr1ncwxrOFHSTIzoudo7jG8y0re30/LO1g==
+promptly@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/promptly/-/promptly-3.1.0.tgz#7f723392f527f032dc295991060d3be612186ea1"
+  integrity sha512-ygvIcmkt+eWtrQwI1/w7wDfzfAWI7IJX1AUVsWQEQwTmpQ5jeSyiD1g6NuI9VXWhz8LK5a5Bcngp/sKnOgQtiA==
   dependencies:
-    pify "^3.0.0"
     read "^1.0.4"
 
 prompts@^2.0.1:
